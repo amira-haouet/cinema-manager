@@ -1,0 +1,108 @@
+<div id="app">
+    <nav class="navbar navbar-expand navbar-dark bg-olive">
+      <a href="#" class="navbar-brand">Cinema Management</a>
+      <ul class="navbar-nav mr-auto" routerLinkActive="active">
+        <li class="nav-item">
+          <a href="/home" class="nav-link" routerLink="home">Home </a>
+        </li>
+        <li class="nav-item" *ngIf="showAdminBoard">
+          <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
+        </li>
+        <li class="nav-item">
+          <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
+        </li>
+      </ul>
+  
+      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a href="/login" class="nav-link" routerLink="login">Login</a>
+        </li>
+      </ul>
+  
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        </li>
+        <li class="nav-item">
+          <a href class="nav-link" (click)="logout()">LogOut</a>
+        </li>
+      </ul>
+    </nav>
+  
+
+  
+
+<div class="wrapper mt-n4">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+      </div>
+  
+      <ul class="list-unstyled components">
+        <p></p>
+        <li class="active">
+          <a href="#homeSubmenu" >Home</a>
+        </li>
+        <li *ngIf="isLoggedIn">
+          <a href="#" routerLink="/cinema">Cinema</a>
+        </li>
+  
+        <li *ngIf="isLoggedIn && showAdminBoard">
+          <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Admin Settings</a>
+          <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+              <a routerLink="/admin/cities">Cities</a>
+            </li>
+            <li>
+                <a routerLink="/admin/cities">Movies</a>
+            </li>
+            <li>
+                <a routerLink="/admin/cities">Movie Projections</a>
+              </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+      </ul>
+  
+      <ul class="list-unstyled CTAs">
+
+      </ul>
+    </nav>
+  
+    <!-- Page Content  -->
+    <div id="content">
+  
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+  
+          <button type="button" id="sidebarCollapse" (click)="onSidebarCollapse()" class="btn btn-info">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+          </button>
+
+          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+            <i class="fas fa-align-justify"></i>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ml-auto">
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid">
+      <router-outlet>
+      </router-outlet>
+  
+      </div>
+  
+    </div>
+  </div>
