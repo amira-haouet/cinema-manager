@@ -95,6 +95,15 @@ public class User{
 		this.roles = roles;
 	}
 
+	public User(Long id, @NotBlank @Size(max = 20) String username, @NotBlank @Size(max = 120) String password,
+			@NotBlank @Size(max = 50) @Email String email) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
+
 	
 	
 

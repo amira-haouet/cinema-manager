@@ -64,7 +64,7 @@ public class CinemaInitServiceImpl implements ICinemaInitService{
 	
 	@Override
 	public void initCities() {
-			Stream.of("Casablanca","Fes","Tanger","Marrakech","Salé","Meknes","Rabat","Oujda","Kenitra","Agadir").forEach(cityName->{
+			Stream.of("Tunis","Nabeul","Djerba","Mahdia","Manzeh6","hamamet","isetnabeul","Oujda","Kenitra","Agadir").forEach(cityName->{
 			City city = new City();
 			city.setName(cityName);
 			cityRepository.save(city);	
@@ -75,7 +75,7 @@ public class CinemaInitServiceImpl implements ICinemaInitService{
 	@Override
 	public void initCinemas() {
 		cityRepository.findAll().forEach(city->{
-			Stream.of("MegaRama","IMAX","FOUNOUN","CHAHRAZAD","DAOULIZ").forEach(cinemaName->{
+			Stream.of("Pathe","dar chabeb","dar tha9afa","houmetesouk","geantcinema").forEach(cinemaName->{
 				Cinema cinema=new Cinema();
 				cinema.setName(cinemaName);
 				cinema.setCity(city);
@@ -207,17 +207,17 @@ public class CinemaInitServiceImpl implements ICinemaInitService{
 		});
 		
 	}
-	/*
-	@Override
+	
+	/*@Override
 	@PostConstruct
 	public void initUsers() {
-		/*List<User> users = Stream.of(
-					new User(101L,"hamzagueddi","7_5inoz5_","hamzaa.gueddi@gmail.com"),
+		List<User> users = Stream.of(
+					new User(101L,"amirahaouet","xxxxxxx","haouet@gmail.com"),
 					new User(102L,"superuser","superpassword","testadmin@gmail.com")
 					).collect(Collectors.toList());
 		userRepository.saveAll(users);
-		*/
-//	}
+		
+	}*/
 
 
 }

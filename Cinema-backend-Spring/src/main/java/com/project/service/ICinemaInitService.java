@@ -11,5 +11,6 @@ public interface ICinemaInitService {
 	public void initmovieProjections();
 	public void initTickets();
 	//public void initUsers();
+//	void initUsers();
 
 }
