@@ -12,7 +12,7 @@ class _aboutPageState extends State<aboutPage> {
         title: Text("About"),
       ),
       body: Center(
-        child: Text("Created by Hamza Gueddi BDCC2"),
+        child: Text("Created by me"),
       ),
     );
   }

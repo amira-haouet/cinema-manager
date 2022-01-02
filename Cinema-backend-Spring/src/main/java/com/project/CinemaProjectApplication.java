@@ -24,7 +24,7 @@ public class CinemaProjectApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		configuration.exposeIdsFor(Movie.class,Room.class,Ticket.class);
-		cinemaInitService.initCities();
+	/*	cinemaInitService.initCities();
 		cinemaInitService.initCinemas();
 		cinemaInitService.initRooms();
 		cinemaInitService.initSeats();
@@ -32,7 +32,7 @@ public class CinemaProjectApplication implements CommandLineRunner{
 		cinemaInitService.initGenres();
 		cinemaInitService.initMovies();
 		cinemaInitService.initmovieProjections();
-		cinemaInitService.initTickets();
+		cinemaInitService.initTickets();*/
 		//cinemaInitService.initUsers();
 		
 	}
