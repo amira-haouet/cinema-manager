@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+const httpOptions = {
+  headers: new HttpHeaders( {'Content-Type': 'application/json'} )
+  };
 @Injectable({
   providedIn: 'root'
 })
@@ -36,4 +39,12 @@ export class CinemaService {
     return this.http.post(this.host+"/payTickets",dataForm);
 
   }
+
+ /* ajouterCinema( prod: Cinema):Observable<Cinema>{
+    return this.http.post<Cinema>(this.host, prod, httpOptions);
+    }*/
+    public listeCinemas(){
+      //console.log(this.http.get<Ville[]>(this.host+"/vil"));
+      return this.http.get(this.host);
+    }
 }
