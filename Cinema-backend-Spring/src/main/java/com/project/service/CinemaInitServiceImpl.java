@@ -155,7 +155,7 @@ public class CinemaInitServiceImpl implements ICinemaInitService{
 		List<Genre> genres = genreRepository.findAll();
 		double[] durations=new double[] {178,142,152,103,186,142,115};
 		int i=0;
-		Stream.of("The godfather","The Shawshank Redemption","The Dark Knight","SAW","The good The bad and the ugly","Forrest Gump","War for the Planet of the Apes")
+		Stream.of("The godfather","croods","coco","SAW","The good The bad and the ugly","Forrest Gump","War for the Planet of the Apes")
 		.forEach(movieName->{
 			Movie movie=new Movie();
 			movie.setName(movieName);

@@ -30,10 +30,11 @@ public class CinemaProjectApplication implements CommandLineRunner{
 		cinemaInitService.initSeats();
 		cinemaInitService.initSessions();
 		cinemaInitService.initGenres();
-		cinemaInitService.initMovies();
+		
 		cinemaInitService.initmovieProjections();
 		cinemaInitService.initTickets();*/
 		//cinemaInitService.initUsers();
+		cinemaInitService.initMovies();
 		
 	}
 
